@@ -1,0 +1,1 @@
+int fprintk(FILE* fp, const char* format, ...);
