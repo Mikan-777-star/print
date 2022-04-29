@@ -1,8 +1,4 @@
-#include "Test1.h"
-
-#include <stdio.h>
-#include <stdarg.h>
-#include <time.h>
+#include "printk.h"
 
 int vfprintk(FILE* fp, const char* format, va_list va){
     
