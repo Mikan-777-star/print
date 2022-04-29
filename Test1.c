@@ -59,15 +59,3 @@ int fprintk(FILE* fp, const char* format, ...){
     return result;
 }
 
-int main(int argc, char const *argv[])
-{
-    long start = (long)time(NULL);
-    char str[] = "furafaru";
-    fprintk(stdout,"project:%s\n", str); 
-    for(int i = 0; i < 1000000; i++){
-        fprintk(stdout,"%d\n", i);
-    }
-    long end = (long)time(NULL);
-    fprintk(stdout, "%ld \n", end - start);
-    return 0;
-}
