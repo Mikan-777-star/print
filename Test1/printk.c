@@ -1,10 +1,11 @@
 #include "printk.h"
 #include "Writek.h"
 
+char s[1024];
+
 int fprintk(FILE* fp, const char* format, ...){
     int result;
     va_list va;
-    char s[1024];
     int size;
 
     va_start(va, format);
