@@ -1,6 +1,7 @@
 #include "printk.h"
 #include "Writek.h"
 
+
 char s[1024];
 
 int fprintk(FILE* fp, const char* format, ...){
@@ -14,7 +15,14 @@ int fprintk(FILE* fp, const char* format, ...){
     if(size < 0){
         result = size;
     }else{
+
         result = Writek(fp->_fileno, s, size);
+        for(int i = 0; i < 100 ; i++){
+            if(result == 0){
+                break;
+            }
+            result = Writek(fp->_fileno, s, size);
+        }
     }
     return result;
 }
